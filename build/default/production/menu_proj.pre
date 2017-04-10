@@ -5120,27 +5120,47 @@ void lcd_display_int_value ( unsigned int value ) ;
 
 void lcd_command ( unsigned char in );
 
-# 43 "menu_proj.c"
+# 26 "menu_proj.c"
 typedef struct
 {
 unsigned char Desired;
 unsigned char Actual;
+unsigned char Run;
 } Motor;
 
 Motor Motor1;
 
-# 56
+typedef struct
+{
+float kp;
+float ki;
+float kpki;
+signed char ek;
+signed char ek1;
+unsigned char uk;
+unsigned char uk1;
+}
+controller;
+
+controller control1;
+
+# 52
 const unsigned char msg_ary[10][16] = {"Desired > ", "Actual  > ",
 "POT Value > ","Press Enter",};
-
 const unsigned char * problem = "Problem";
-
 const unsigned char * startup = "Ready to go";
+unsigned char count = 0;
+unsigned char rev1 = 0;
+unsigned char rev = 0;
+unsigned char Actual = 0;
+unsigned int capture;
 
-# 67
+# 65
 void Initial(void);
 void Window(unsigned char num);
 void delay_s(unsigned char secs);
+void timer (void);
+void controller_funct(void);
 
 # 75
 unsigned char count_test =0;
@@ -5150,47 +5170,55 @@ void __interrupt myIsr(void)
 {
 
 
-if(INTCONbits.TMR0IE && INTCONbits.TMR0IF) {
-
-Find_Button_Press();
-WriteTimer0(40960);
+if(INTCONbits.TMR0IE && INTCONbits.TMR0IF)
+{
+WriteTimer0(45536);
 INTCONbits.TMR0IF = 0;
-
-
+Find_Button_Press();
 
 sample_time++;
 if (sample_time > 9)
 {
 TICK_E = 1;
 sample_time =0;
+controller_funct();
+CCPR2L = control1.uk;
+
 }
+
 
 count_test++;
 if(count_test == 100){
-PORTCbits.RC7 = ~PORTCbits.RC7;
+PORTEbits.AN7 = ~PORTEbits.AN7;
 count_test = 0;
-}
-}
-}
 
+
+}
+}
+if (PIE1bits.CCP1IE && PIR1bits.CCP1IF)
+{
+PIR1bits.CCP1IF = 0;
+capture = CCPR1L + (CCPR1H * 256);
+
+TMR1H = 0;
+TMR1L = 0;
+}
+}
 
 
 Bit_Mask Button_Press;
 
-# 123
+# 131
 void main ( void )
 {
-
 unsigned char ADC_Result = 0;
-
-Motor1.Desired=0;
-Motor1.Actual=0;
-
+unsigned short long t1clk = 250000;
 
 typedef enum {RUN = 0,Update_Desired} states;
 states my_mch_state = Update_Desired;
 
 Initial();
+timer();
 lcd_start ();
 lcd_cursor ( 0, 0 ) ;
 lcd_print ( startup ) ;
@@ -5203,10 +5231,12 @@ lcd_display_value(Motor1.Desired);
 lcd_cursor ( 12, 1 ) ;
 lcd_display_value(Motor1.Actual);
 
+PIE1bits.CCP1IE = 1;
+
+(INTCONbits.GIE = 1);
+
 while(1)
 {
-
-
 
 while(!(Button_Press.Full !=0 ? 1:0) && !TICK_E);
 
@@ -5218,6 +5248,7 @@ my_mch_state = Update_Desired;
 Window(1);
 ADCON0bits.ADON=1;
 PIR1bits.ADIF=0;
+
 }
 
 break;
@@ -5242,14 +5273,23 @@ case RUN:
 lcd_cursor ( 12, 0 ) ;
 lcd_display_value(Motor1.Desired);
 lcd_cursor ( 12, 1 ) ;
+
+
+if (capture !=0)
+{
+Motor1.Actual = t1clk/capture;
+capture = 0;
+
+}
 lcd_display_value(Motor1.Actual);
-LATC = 0x01;
+
+LATEbits.LATE0 = 1;
+
 
 break;
 case Update_Desired:
-lcd_cursor ( 12, 0 ) ;
-lcd_display_value(ADC_Result);
-LATC= 0x02;
+
+LATEbits.LATE1 = 1;;
 PIR1bits.ADIF=0;
 if (Button_Press.B1)
 {
@@ -5258,42 +5298,38 @@ Motor1.Desired = ADC_Result;
 ADC_Result=ADRESH;
 ADC_Result=ADC_Result>>2;
 if (ADC_Result > 50)
-{
 ADC_Result=50;
-}
-
+lcd_cursor ( 12, 0 ) ;
+lcd_display_value(ADC_Result);
 ADCON0bits.GO_DONE=1;
 
-# 213
+
+
 break;
 default:
 lcd_cursor ( 0, 0 ) ;
 lcd_clear();
 lcd_print ( problem );
-LATC = 0x05;
+
 break;
 }
 
 Button_Press.Full = 0;
 TICK_E=0;
-
 }
 }
 
 
-void Initial(void){
-
+void Initial(void)
+{
 
 TRISB = 0xFF;
-TRISC = 0x00;
-
-LATC = 0xff;
-delay_s(3);
-LATC = 0x00;
+TRISE = 0x00;
+TRISCbits.RC1 = 0;
 
 
-OpenTimer0( 0b11111111 & 0b10111111 & 0b11011111 & 0b11110000);
-WriteTimer0(40960);
+OpenTimer0( 0b11111111 & 0b10111111 & 0b11011111 & 0b11111111);
+WriteTimer0(45536);
 
 ADCON0 =0x00;
 ADCON1 = 0x0E;
@@ -5302,9 +5338,53 @@ PIR1bits.ADIF=0;
 ADCON0bits.ADON=0;
 TRISA = 0x01;
 
-(INTCONbits.GIE = 1);
+
+T1CONbits.TMR1ON =1;
+T1CONbits.RD16 = 1;
+T1CONbits.TMR1CS = 0;
+T1CONbits.T1CKPS0 = 1;
+T1CONbits.T1CKPS1 = 1;
+
+CCP1CONbits.CCP1M0 = 1;
+CCP1CONbits.CCP1M1 = 0;
+CCP1CONbits.CCP1M2 = 1;
+CCP1CONbits.CCP1M3 = 0;
+
+
+T2CONbits.TMR2ON =1;
+CCP2CONbits.CCP2M3 = 1;
+CCP2CONbits.CCP2M2 = 1;
+PR2 = 100;
+
+
+RCONbits.IPEN = 0;
+INTCONbits.GIE = 1;
+
+
+INTCONbits.PEIE = 1;
+
+# 291
+control1.kp = 0.4;
+control1.ki = 0.3;
+control1.kpki = 0.7;
+control1.ek = 0;
+control1.ek1 = 0;
+control1.uk = 30;
+control1.uk1 = 30;
+Motor1.Desired=20;
+Motor1.Actual=0;
+
 }
 
+
+void timer (void)
+{
+
+OSCCONbits.IRCF0 = 1;
+OSCCONbits.IRCF1 = 1;
+OSCCONbits.IRCF2 = 1;
+OSCCONbits.SCS1 = 1;
+}
 void Window(unsigned char num)
 {
 lcd_clear();
@@ -5321,8 +5401,16 @@ unsigned char i,j;
 for(j=0;j<secs;j++)
 {
 for (i=0;i<25;i++)
-_delay((unsigned long)((40)*(19660800/4000.0)));
+_delay((unsigned long)((40)*(8000000/4000.0)));
 
 }
 }
-
+void controller_funct (void)
+{
+float temp = 0;
+control1.ek1 = control1.ek;
+control1.ek = Motor1.Desired - Motor1.Actual;
+control1.uk1 = control1.uk;
+temp = ((control1.kpki * control1.ek )- (control1.kp * control1.ek1));
+control1.uk = control1.uk1 + temp;
+}

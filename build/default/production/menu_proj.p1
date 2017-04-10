@@ -1,7 +1,10 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"44 menu_proj.c
-[s S408 `uc 1 `uc 1 ]
-[n S408 . Desired Actual ]
+"27 menu_proj.c
+[s S408 `uc 1 `uc 1 `uc 1 ]
+[n S408 . Desired Actual Run ]
+"36
+[s S409 `f 1 `f 1 `f 1 `c 1 `c 1 `uc 1 `uc 1 ]
+[n S409 . kp ki kpki ek ek1 uk uk1 ]
 "6955 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4520.h
 [s S358 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S358 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
@@ -22,33 +25,139 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S357 . . . . . . ]
 "7001
 [v _INTCONbits `VS357 ~T0 @X0 0 e@4082 ]
-"11 ../../GitHub/Buttons_Debounce_State_Mch/Buttons_Debounce.X/Buttons_Debounce.h
-[v _Find_Button_Press `(v ~T0 @X0 0 ef ]
 "121 C:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\timers.h
 [v _WriteTimer0 `(v ~T0 @X0 0 ef1`ui ]
-"453 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4520.h
-[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S19 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
-"463
-[s S20 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S20 . T1OSO T1OSI CCP1 SCK SDI SDO TX RX ]
-"473
-[s S21 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S21 . T13CKI CCP2 . SCL SDA . CK DT ]
-"483
-[s S22 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S22 . T1CKI . P1A ]
-"488
-[s S23 :2 `uc 1 :1 `uc 1 ]
-[n S23 . . PA1 ]
-"492
-[s S24 :1 `uc 1 :1 `uc 1 ]
-[n S24 . . PA2 ]
-"452
-[u S18 `S19 1 `S20 1 `S21 1 `S22 1 `S23 1 `S24 1 ]
-[n S18 . . . . . . . ]
-"497
-[v _PORTCbits `VS18 ~T0 @X0 0 e@3970 ]
+"11 ../../GitHub/Buttons_Debounce_State_Mch/Buttons_Debounce.X/Buttons_Debounce.h
+[v _Find_Button_Press `(v ~T0 @X0 0 ef ]
+"69 menu_proj.c
+[v _controller_funct `(v ~T0 @X0 0 ef ]
+"4766 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4520.h
+[v _CCPR2L `Vuc ~T0 @X0 0 e@4027 ]
+"778
+[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S31 . RE0 RE1 RE2 RE3 ]
+"784
+[s S32 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S32 . RD WR CS MCLR ]
+"790
+[s S33 :1 `uc 1 ]
+[n S33 . NOT_RD ]
+"793
+[s S34 :1 `uc 1 :1 `uc 1 ]
+[n S34 . . NOT_WR ]
+"797
+[s S35 :2 `uc 1 :1 `uc 1 ]
+[n S35 . . NOT_CS ]
+"801
+[s S36 :3 `uc 1 :1 `uc 1 ]
+[n S36 . . NOT_MCLR ]
+"805
+[s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S37 . nRD nWR nCS nMCLR ]
+"811
+[s S38 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S38 . AN5 AN6 AN7 VPP ]
+"817
+[s S39 :2 `uc 1 :1 `uc 1 ]
+[n S39 . . CCP10 ]
+"821
+[s S40 :7 `uc 1 :1 `uc 1 ]
+[n S40 . . CCP2E ]
+"825
+[s S41 :6 `uc 1 :1 `uc 1 ]
+[n S41 . . CCP6E ]
+"829
+[s S42 :5 `uc 1 :1 `uc 1 ]
+[n S42 . . CCP7E ]
+"833
+[s S43 :4 `uc 1 :1 `uc 1 ]
+[n S43 . . CCP8E ]
+"837
+[s S44 :3 `uc 1 :1 `uc 1 ]
+[n S44 . . CCP9E ]
+"841
+[s S45 :7 `uc 1 :1 `uc 1 ]
+[n S45 . . PA2E ]
+"845
+[s S46 :6 `uc 1 :1 `uc 1 ]
+[n S46 . . PB1E ]
+"849
+[s S47 :2 `uc 1 :1 `uc 1 ]
+[n S47 . . PB2 ]
+"853
+[s S48 :4 `uc 1 :1 `uc 1 ]
+[n S48 . . PB3E ]
+"857
+[s S49 :5 `uc 1 :1 `uc 1 ]
+[n S49 . . PC1E ]
+"861
+[s S50 :1 `uc 1 :1 `uc 1 ]
+[n S50 . . PC2 ]
+"865
+[s S51 :3 `uc 1 :1 `uc 1 ]
+[n S51 . . PC3E ]
+"869
+[s S52 :1 `uc 1 ]
+[n S52 . PD2 ]
+"872
+[s S53 :1 `uc 1 ]
+[n S53 . RDE ]
+"875
+[s S54 :4 `uc 1 :1 `uc 1 ]
+[n S54 . . RE4 ]
+"879
+[s S55 :5 `uc 1 :1 `uc 1 ]
+[n S55 . . RE5 ]
+"883
+[s S56 :6 `uc 1 :1 `uc 1 ]
+[n S56 . . RE6 ]
+"887
+[s S57 :7 `uc 1 :1 `uc 1 ]
+[n S57 . . RE7 ]
+"891
+[s S58 :1 `uc 1 :1 `uc 1 ]
+[n S58 . . WRE ]
+"777
+[u S30 `S31 1 `S32 1 `S33 1 `S34 1 `S35 1 `S36 1 `S37 1 `S38 1 `S39 1 `S40 1 `S41 1 `S42 1 `S43 1 `S44 1 `S45 1 `S46 1 `S47 1 `S48 1 `S49 1 `S50 1 `S51 1 `S52 1 `S53 1 `S54 1 `S55 1 `S56 1 `S57 1 `S58 1 ]
+[n S30 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ]
+"896
+[v _PORTEbits `VS30 ~T0 @X0 0 e@3972 ]
+"2847
+[s S143 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S143 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
+"2857
+[s S144 :5 `uc 1 :1 `uc 1 ]
+[n S144 . . RC1IE ]
+"2861
+[s S145 :4 `uc 1 :1 `uc 1 ]
+[n S145 . . TX1IE ]
+"2846
+[u S142 `S143 1 `S144 1 `S145 1 ]
+[n S142 . . . . ]
+"2866
+[v _PIE1bits `VS142 ~T0 @X0 0 e@3997 ]
+"2926
+[s S147 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S147 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+"2936
+[s S148 :5 `uc 1 :1 `uc 1 ]
+[n S148 . . RC1IF ]
+"2940
+[s S149 :4 `uc 1 :1 `uc 1 ]
+[n S149 . . TX1IF ]
+"2925
+[u S146 `S147 1 `S148 1 `S149 1 ]
+[n S146 . . . . ]
+"2945
+[v _PIR1bits `VS146 ~T0 @X0 0 e@3998 ]
+"4880
+[v _CCPR1L `Vuc ~T0 @X0 0 e@4030 ]
+"4886
+[v _CCPR1H `Vuc ~T0 @X0 0 e@4031 ]
+"5934
+[v _TMR1H `Vuc ~T0 @X0 0 e@4047 ]
+"5928
+[v _TMR1L `Vuc ~T0 @X0 0 e@4046 ]
 "15 ../../GitHub/Buttons_Debounce_State_Mch/Buttons_Debounce.X/Buttons_Debounce.h
 [s S407 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S407 . B0 B1 B2 B3 B4 B5 B6 B7 ]
@@ -56,17 +165,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [u S406 `uc 1 `S407 1 ]
 [n S406 . Full . ]
 [p mainexit ]
-"67 menu_proj.c
+"65 menu_proj.c
 [v _Initial `(v ~T0 @X0 0 ef ]
+"68
+[v _timer `(v ~T0 @X0 0 ef ]
 "22 ../../GitHub/LCD_library/lcdlib_2016.h
 [v _lcd_start `(uc ~T0 @X0 0 ef ]
 "30
 [v _lcd_cursor `(uc ~T0 @X0 0 ef2`uc`uc ]
 "28
 [v _lcd_print `(uc ~T0 @X0 0 ef1`*Cuc ]
-"69 menu_proj.c
+"67 menu_proj.c
 [v _delay_s `(v ~T0 @X0 0 ef1`uc ]
-"68
+"66
 [v _Window `(v ~T0 @X0 0 ef1`uc ]
 "40 ../../GitHub/LCD_library/lcdlib_2016.h
 [v _lcd_display_value `(v ~T0 @X0 0 ef1`uc ]
@@ -102,30 +213,57 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S260 . . . . . . . . . . ]
 "5100
 [v _ADCON0bits `VS260 ~T0 @X0 0 e@4034 ]
-"2926
-[s S147 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S147 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
-"2936
-[s S148 :5 `uc 1 :1 `uc 1 ]
-[n S148 . . RC1IF ]
-"2940
-[s S149 :4 `uc 1 :1 `uc 1 ]
-[n S149 . . TX1IF ]
-"2925
-[u S146 `S147 1 `S148 1 `S149 1 ]
-[n S146 . . . . ]
-"2945
-[v _PIR1bits `VS146 ~T0 @X0 0 e@3998 ]
-"1364
-[v _LATC `Vuc ~T0 @X0 0 e@3979 ]
+"1634
+[s S100 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S100 . LATE0 LATE1 LATE2 ]
+"1639
+[s S101 :1 `uc 1 ]
+[n S101 . LE0 ]
+"1642
+[s S102 :1 `uc 1 :1 `uc 1 ]
+[n S102 . . LE1 ]
+"1646
+[s S103 :2 `uc 1 :1 `uc 1 ]
+[n S103 . . LE2 ]
+"1650
+[s S104 :3 `uc 1 :1 `uc 1 ]
+[n S104 . . LE3 ]
+"1654
+[s S105 :4 `uc 1 :1 `uc 1 ]
+[n S105 . . LE4 ]
+"1658
+[s S106 :5 `uc 1 :1 `uc 1 ]
+[n S106 . . LE5 ]
+"1662
+[s S107 :6 `uc 1 :1 `uc 1 ]
+[n S107 . . LE6 ]
+"1666
+[s S108 :7 `uc 1 :1 `uc 1 ]
+[n S108 . . LE7 ]
+"1633
+[u S99 `S100 1 `S101 1 `S102 1 `S103 1 `S104 1 `S105 1 `S106 1 `S107 1 `S108 1 ]
+[n S99 . . . . . . . . . . ]
+"1671
+[v _LATEbits `VS99 ~T0 @X0 0 e@3981 ]
 "5186
 [v _ADRESH `Vuc ~T0 @X0 0 e@4036 ]
 "24 ../../GitHub/LCD_library/lcdlib_2016.h
 [v _lcd_clear `(uc ~T0 @X0 0 ef ]
 "1951 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4520.h
 [v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
-"2172
-[v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
+"2614
+[v _TRISE `Vuc ~T0 @X0 0 e@3990 ]
+"2183
+[s S122 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S122 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"2193
+[s S123 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S123 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"2182
+[u S121 `S122 1 `S123 1 ]
+[n S121 . . . ]
+"2204
+[v _TRISCbits `VS121 ~T0 @X0 0 e@3988 ]
 "118 C:\Program Files (x86)\Microchip\xc8\v1.35\include\plib\timers.h
 [v _OpenTimer0 `(v ~T0 @X0 0 ef1`uc ]
 "5052 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4520.h
@@ -136,6 +274,107 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ADCON2 `Vuc ~T0 @X0 0 e@4032 ]
 "1730
 [v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
+"5824
+[s S312 :2 `uc 1 :1 `uc 1 ]
+[n S312 . . NOT_T1SYNC ]
+"5828
+[s S313 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S313 . TMR1ON TMR1CS nT1SYNC T1OSCEN T1CKPS T1RUN RD16 ]
+"5837
+[s S314 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S314 . . T1SYNC . T1CKPS0 T1CKPS1 ]
+"5844
+[s S315 :3 `uc 1 :1 `uc 1 ]
+[n S315 . . SOSCEN ]
+"5848
+[s S316 :7 `uc 1 :1 `uc 1 ]
+[n S316 . . T1RD16 ]
+"5823
+[u S311 `S312 1 `S313 1 `S314 1 `S315 1 `S316 1 ]
+[n S311 . . . . . . ]
+"5853
+[v _T1CONbits `VS311 ~T0 @X0 0 e@4045 ]
+"4784
+[s S248 :4 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S248 . CCP1M DC1B P1M ]
+"4789
+[s S249 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S249 . CCP1M0 CCP1M1 CCP1M2 CCP1M3 CCP1Y CCP1X P1M0 P1M1 ]
+"4799
+[s S250 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S250 . . DC1B0 DC1B1 ]
+"4783
+[u S247 `S248 1 `S249 1 `S250 1 ]
+[n S247 . . . . ]
+"4805
+[v _CCP1CONbits `VS247 ~T0 @X0 0 e@4029 ]
+"5612
+[s S296 :2 `uc 1 :1 `uc 1 :4 `uc 1 ]
+[n S296 . T2CKPS TMR2ON T2OUTPS ]
+"5617
+[s S297 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S297 . T2CKPS0 T2CKPS1 . T2OUTPS0 T2OUTPS1 T2OUTPS2 T2OUTPS3 ]
+"5626
+[s S298 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S298 . . TOUTPS0 TOUTPS1 TOUTPS2 TOUTPS3 ]
+"5611
+[u S295 `S296 1 `S297 1 `S298 1 ]
+[n S295 . . . . ]
+"5634
+[v _T2CONbits `VS295 ~T0 @X0 0 e@4042 ]
+"4688
+[s S244 :4 `uc 1 :2 `uc 1 ]
+[n S244 . CCP2M DC2B ]
+"4692
+[s S245 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S245 . CCP2M0 CCP2M1 CCP2M2 CCP2M3 CCP2Y CCP2X ]
+"4700
+[s S246 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S246 . . DC2B0 DC2B1 ]
+"4687
+[u S243 `S244 1 `S245 1 `S246 1 ]
+[n S243 . . . . ]
+"4706
+[v _CCP2CONbits `VS243 ~T0 @X0 0 e@4026 ]
+"5703
+[v _PR2 `Vuc ~T0 @X0 0 e@4043 ]
+"5946
+[s S318 :1 `uc 1 ]
+[n S318 . NOT_BOR ]
+"5949
+[s S319 :1 `uc 1 :1 `uc 1 ]
+[n S319 . . NOT_POR ]
+"5953
+[s S320 :2 `uc 1 :1 `uc 1 ]
+[n S320 . . NOT_PD ]
+"5957
+[s S321 :3 `uc 1 :1 `uc 1 ]
+[n S321 . . NOT_TO ]
+"5961
+[s S322 :4 `uc 1 :1 `uc 1 ]
+[n S322 . . NOT_RI ]
+"5965
+[s S323 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S323 . nBOR nPOR nPD nTO nRI . SBOREN IPEN ]
+"5975
+[s S324 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S324 . BOR POR PD TO RI ]
+"5945
+[u S317 `S318 1 `S319 1 `S320 1 `S321 1 `S322 1 `S323 1 `S324 1 ]
+[n S317 . . . . . . . . ]
+"5983
+[v _RCONbits `VS317 ~T0 @X0 0 e@4048 ]
+"6374
+[s S339 :2 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S339 . SCS IOFS OSTS IRCF IDLEN ]
+"6381
+[s S340 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S340 . SCS0 SCS1 FLTS . IRCF0 IRCF1 IRCF2 ]
+"6373
+[u S338 `S339 1 `S340 1 ]
+[n S338 . . . ]
+"6391
+[v _OSCCONbits `VS338 ~T0 @X0 0 e@4051 ]
 [v F4092 `(v ~T0 @X0 1 tf1`ul ]
 "152 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18.h
 [v __delay `JF4092 ~T0 @X0 0 e ]
@@ -3954,17 +4193,32 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcdlib_2016.h: 40: void lcd_display_value ( unsigned char value );
 [; ;lcdlib_2016.h: 41: void lcd_display_int_value ( unsigned int value ) ;
 [; ;lcdlib_2016.h: 43: void lcd_command ( unsigned char in );
-[; ;menu_proj.c: 43: typedef struct
-[; ;menu_proj.c: 44: {
-[; ;menu_proj.c: 45: unsigned char Desired;
-[; ;menu_proj.c: 46: unsigned char Actual;
-[; ;menu_proj.c: 47: } Motor;
-"49 menu_proj.c
+[; ;menu_proj.c: 26: typedef struct
+[; ;menu_proj.c: 27: {
+[; ;menu_proj.c: 28: unsigned char Desired;
+[; ;menu_proj.c: 29: unsigned char Actual;
+[; ;menu_proj.c: 30: unsigned char Run;
+[; ;menu_proj.c: 31: } Motor;
+"33 menu_proj.c
 [v _Motor1 `S408 ~T0 @X0 1 e ]
-[; ;menu_proj.c: 49: Motor Motor1;
-[v F4327 `Cuc ~T0 @X0 -> 16 `i t ]
-"56
-[v _msg_ary `F4327 ~T0 @X0 -> 10 `i e ]
+[; ;menu_proj.c: 33: Motor Motor1;
+[; ;menu_proj.c: 35: typedef struct
+[; ;menu_proj.c: 36: {
+[; ;menu_proj.c: 37: float kp;
+[; ;menu_proj.c: 38: float ki;
+[; ;menu_proj.c: 39: float kpki;
+[; ;menu_proj.c: 40: signed char ek;
+[; ;menu_proj.c: 41: signed char ek1;
+[; ;menu_proj.c: 42: unsigned char uk;
+[; ;menu_proj.c: 43: unsigned char uk1;
+[; ;menu_proj.c: 44: }
+[; ;menu_proj.c: 45: controller;
+"47
+[v _control1 `S409 ~T0 @X0 1 e ]
+[; ;menu_proj.c: 47: controller control1;
+[v F4338 `Cuc ~T0 @X0 -> 16 `i t ]
+"52
+[v _msg_ary `F4338 ~T0 @X0 -> 10 `i e ]
 [i _msg_ary
 :U ..
 :U ..
@@ -4024,23 +4278,52 @@ Version 3.2 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-[; ;menu_proj.c: 56: const unsigned char msg_ary[10][16] = {"Desired > ", "Actual  > ",
-[; ;menu_proj.c: 57: "POT Value > ","Press Enter",};
-"59
+[; ;menu_proj.c: 52: const unsigned char msg_ary[10][16] = {"Desired > ", "Actual  > ",
+[; ;menu_proj.c: 53: "POT Value > ","Press Enter",};
+"54
 [v _problem `*Cuc ~T0 @X0 1 e ]
 [i _problem
 :s 1C
 ]
-[; ;menu_proj.c: 59: const unsigned char * problem = "Problem";
-"61
+[; ;menu_proj.c: 54: const unsigned char * problem = "Problem";
+"55
 [v _startup `*Cuc ~T0 @X0 1 e ]
 [i _startup
 :s 2C
 ]
-[; ;menu_proj.c: 61: const unsigned char * startup = "Ready to go";
-[; ;menu_proj.c: 67: void Initial(void);
-[; ;menu_proj.c: 68: void Window(unsigned char num);
-[; ;menu_proj.c: 69: void delay_s(unsigned char secs);
+[; ;menu_proj.c: 55: const unsigned char * startup = "Ready to go";
+"56
+[v _count `uc ~T0 @X0 1 e ]
+[i _count
+-> -> 0 `i `uc
+]
+[; ;menu_proj.c: 56: unsigned char count = 0;
+"57
+[v _rev1 `uc ~T0 @X0 1 e ]
+[i _rev1
+-> -> 0 `i `uc
+]
+[; ;menu_proj.c: 57: unsigned char rev1 = 0;
+"58
+[v _rev `uc ~T0 @X0 1 e ]
+[i _rev
+-> -> 0 `i `uc
+]
+[; ;menu_proj.c: 58: unsigned char rev = 0;
+"59
+[v _Actual `uc ~T0 @X0 1 e ]
+[i _Actual
+-> -> 0 `i `uc
+]
+[; ;menu_proj.c: 59: unsigned char Actual = 0;
+"60
+[v _capture `ui ~T0 @X0 1 e ]
+[; ;menu_proj.c: 60: unsigned int capture;
+[; ;menu_proj.c: 65: void Initial(void);
+[; ;menu_proj.c: 66: void Window(unsigned char num);
+[; ;menu_proj.c: 67: void delay_s(unsigned char secs);
+[; ;menu_proj.c: 68: void timer (void);
+[; ;menu_proj.c: 69: void controller_funct(void);
 "75
 [v _count_test `uc ~T0 @X0 1 e ]
 [i _count_test
@@ -4056,492 +4339,659 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 [; ;menu_proj.c: 77: unsigned char sample_time =0;
-[v F4341 `(v ~T0 @X0 1 tf ]
+[v F4361 `(v ~T0 @X0 1 tf ]
 "78
-[v _myIsr `IF4341 ~T0 @X0 1 e ]
+[v _myIsr `IF4361 ~T0 @X0 1 e ]
 "79
 {
 [; ;menu_proj.c: 78: void __interrupt myIsr(void)
 [; ;menu_proj.c: 79: {
 [e :U _myIsr ]
 [f ]
-[; ;menu_proj.c: 82: if(INTCONbits.TMR0IE && INTCONbits.TMR0IF) {
+[; ;menu_proj.c: 82: if(INTCONbits.TMR0IE && INTCONbits.TMR0IF)
 "82
-[e $ ! && != -> . . _INTCONbits 0 5 `i -> -> -> 0 `i `Vuc `i != -> . . _INTCONbits 0 2 `i -> -> -> 0 `i `Vuc `i 410  ]
+[e $ ! && != -> . . _INTCONbits 0 5 `i -> -> -> 0 `i `Vuc `i != -> . . _INTCONbits 0 2 `i -> -> -> 0 `i `Vuc `i 411  ]
+[; ;menu_proj.c: 83: {
+"83
 {
-[; ;menu_proj.c: 84: Find_Button_Press();
+[; ;menu_proj.c: 84: WriteTimer0(45536);
 "84
-[e ( _Find_Button_Press ..  ]
-[; ;menu_proj.c: 85: WriteTimer0(40960);
+[e ( _WriteTimer0 (1 -> -> 45536 `l `ui ]
+[; ;menu_proj.c: 85: INTCONbits.TMR0IF = 0;
 "85
-[e ( _WriteTimer0 (1 -> -> 40960 `l `ui ]
-[; ;menu_proj.c: 86: INTCONbits.TMR0IF = 0;
-"86
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;menu_proj.c: 90: sample_time++;
-"90
+[; ;menu_proj.c: 86: Find_Button_Press();
+"86
+[e ( _Find_Button_Press ..  ]
+[; ;menu_proj.c: 88: sample_time++;
+"88
 [e ++ _sample_time -> -> 1 `i `uc ]
-[; ;menu_proj.c: 91: if (sample_time > 9)
+[; ;menu_proj.c: 89: if (sample_time > 9)
+"89
+[e $ ! > -> _sample_time `i -> 9 `i 412  ]
+[; ;menu_proj.c: 90: {
+"90
+{
+[; ;menu_proj.c: 91: TICK_E = 1;
 "91
-[e $ ! > -> _sample_time `i -> 9 `i 411  ]
-[; ;menu_proj.c: 92: {
-"92
-{
-[; ;menu_proj.c: 93: TICK_E = 1;
-"93
 [e = _TICK_E -> -> 1 `i `uc ]
-[; ;menu_proj.c: 94: sample_time =0;
-"94
+[; ;menu_proj.c: 92: sample_time =0;
+"92
 [e = _sample_time -> -> 0 `i `uc ]
-"95
-}
-[e :U 411 ]
-[; ;menu_proj.c: 95: }
-[; ;menu_proj.c: 97: count_test++;
-"97
-[e ++ _count_test -> -> 1 `i `uc ]
-[; ;menu_proj.c: 98: if(count_test == 100){
-"98
-[e $ ! == -> _count_test `i -> 100 `i 412  ]
-{
-[; ;menu_proj.c: 99: PORTCbits.RC7 = ~PORTCbits.RC7;
-"99
-[e = . . _PORTCbits 0 7 -> ~ -> . . _PORTCbits 0 7 `i `uc ]
-[; ;menu_proj.c: 100: count_test = 0;
-"100
-[e = _count_test -> -> 0 `i `uc ]
-"101
+[; ;menu_proj.c: 93: controller_funct();
+"93
+[e ( _controller_funct ..  ]
+[; ;menu_proj.c: 94: CCPR2L = control1.uk;
+"94
+[e = _CCPR2L . _control1 5 ]
+"96
 }
 [e :U 412 ]
-"102
-}
-[e :U 410 ]
-[; ;menu_proj.c: 101: }
-[; ;menu_proj.c: 102: }
-[; ;menu_proj.c: 103: }
-"103
-[e :UE 409 ]
-}
-"107
-[v _Button_Press `S406 ~T0 @X0 1 e ]
-[; ;menu_proj.c: 107: Bit_Mask Button_Press;
-"123
-[v _main `(v ~T0 @X0 1 ef ]
-"124
+[; ;menu_proj.c: 96: }
+[; ;menu_proj.c: 99: count_test++;
+"99
+[e ++ _count_test -> -> 1 `i `uc ]
+[; ;menu_proj.c: 100: if(count_test == 100){
+"100
+[e $ ! == -> _count_test `i -> 100 `i 413  ]
 {
-[; ;menu_proj.c: 123: void main ( void )
-[; ;menu_proj.c: 124: {
+[; ;menu_proj.c: 101: PORTEbits.AN7 = ~PORTEbits.AN7;
+"101
+[e = . . _PORTEbits 7 2 -> ~ -> . . _PORTEbits 7 2 `i `uc ]
+[; ;menu_proj.c: 102: count_test = 0;
+"102
+[e = _count_test -> -> 0 `i `uc ]
+"105
+}
+[e :U 413 ]
+"106
+}
+[e :U 411 ]
+[; ;menu_proj.c: 105: }
+[; ;menu_proj.c: 106: }
+[; ;menu_proj.c: 107: if (PIE1bits.CCP1IE && PIR1bits.CCP1IF)
+"107
+[e $ ! && != -> . . _PIE1bits 0 2 `i -> -> -> 0 `i `Vuc `i != -> . . _PIR1bits 0 2 `i -> -> -> 0 `i `Vuc `i 414  ]
+[; ;menu_proj.c: 108: {
+"108
+{
+[; ;menu_proj.c: 109: PIR1bits.CCP1IF = 0;
+"109
+[e = . . _PIR1bits 0 2 -> -> 0 `i `uc ]
+[; ;menu_proj.c: 110: capture = CCPR1L + (CCPR1H * 256);
+"110
+[e = _capture -> + -> _CCPR1L `i * -> _CCPR1H `i -> 256 `i `ui ]
+[; ;menu_proj.c: 112: TMR1H = 0;
+"112
+[e = _TMR1H -> -> 0 `i `uc ]
+[; ;menu_proj.c: 113: TMR1L = 0;
+"113
+[e = _TMR1L -> -> 0 `i `uc ]
+"114
+}
+[e :U 414 ]
+[; ;menu_proj.c: 114: }
+[; ;menu_proj.c: 115: }
+"115
+[e :UE 410 ]
+}
+"118
+[v _Button_Press `S406 ~T0 @X0 1 e ]
+[; ;menu_proj.c: 118: Bit_Mask Button_Press;
+"131
+[v _main `(v ~T0 @X0 1 ef ]
+"132
+{
+[; ;menu_proj.c: 131: void main ( void )
+[; ;menu_proj.c: 132: {
 [e :U _main ]
 [f ]
-"126
-[v _ADC_Result `uc ~T0 @X0 1 a ]
-[; ;menu_proj.c: 126: unsigned char ADC_Result = 0;
-[e = _ADC_Result -> -> 0 `i `uc ]
-[; ;menu_proj.c: 128: Motor1.Desired=0;
-"128
-[e = . _Motor1 0 -> -> 0 `i `uc ]
-[; ;menu_proj.c: 129: Motor1.Actual=0;
-"129
-[e = . _Motor1 1 -> -> 0 `i `uc ]
-"132
-[c E4346 0 1 .. ]
-[n E4346 . RUN Update_Desired  ]
-[v _states `E4346 ~T0 @X0 1 t ]
 "133
-[v _my_mch_state `E4346 ~T0 @X0 1 a ]
-[; ;menu_proj.c: 132: typedef enum {RUN = 0,Update_Desired} states;
-[; ;menu_proj.c: 133: states my_mch_state = Update_Desired;
-[e = _my_mch_state . `E4346 1 ]
-[; ;menu_proj.c: 135: Initial();
-"135
-[e ( _Initial ..  ]
-[; ;menu_proj.c: 136: lcd_start ();
+[v _ADC_Result `uc ~T0 @X0 1 a ]
+[; ;menu_proj.c: 133: unsigned char ADC_Result = 0;
+[e = _ADC_Result -> -> 0 `i `uc ]
+"134
+[v _t1clk `um ~T0 @X0 1 a ]
+[; ;menu_proj.c: 134: unsigned short long t1clk = 250000;
+[e = _t1clk -> -> 250000 `l `um ]
 "136
-[e ( _lcd_start ..  ]
-[; ;menu_proj.c: 137: lcd_cursor ( 0, 0 ) ;
+[c E4367 0 1 .. ]
+[n E4367 . RUN Update_Desired  ]
+[v _states `E4367 ~T0 @X0 1 t ]
 "137
-[e ( _lcd_cursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;menu_proj.c: 138: lcd_print ( startup ) ;
-"138
-[e ( _lcd_print (1 _startup ]
-[; ;menu_proj.c: 140: delay_s(2);
+[v _my_mch_state `E4367 ~T0 @X0 1 a ]
+[; ;menu_proj.c: 136: typedef enum {RUN = 0,Update_Desired} states;
+[; ;menu_proj.c: 137: states my_mch_state = Update_Desired;
+[e = _my_mch_state . `E4367 1 ]
+[; ;menu_proj.c: 139: Initial();
+"139
+[e ( _Initial ..  ]
+[; ;menu_proj.c: 140: timer();
 "140
-[e ( _delay_s (1 -> -> 2 `i `uc ]
-[; ;menu_proj.c: 142: Window(0);
+[e ( _timer ..  ]
+[; ;menu_proj.c: 141: lcd_start ();
+"141
+[e ( _lcd_start ..  ]
+[; ;menu_proj.c: 142: lcd_cursor ( 0, 0 ) ;
 "142
-[e ( _Window (1 -> -> 0 `i `uc ]
-[; ;menu_proj.c: 143: lcd_cursor ( 12, 0 ) ;
+[e ( _lcd_cursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;menu_proj.c: 143: lcd_print ( startup ) ;
 "143
-[e ( _lcd_cursor (2 , -> -> 12 `i `uc -> -> 0 `i `uc ]
-[; ;menu_proj.c: 144: lcd_display_value(Motor1.Desired);
-"144
-[e ( _lcd_display_value (1 . _Motor1 0 ]
-[; ;menu_proj.c: 145: lcd_cursor ( 12, 1 ) ;
+[e ( _lcd_print (1 _startup ]
+[; ;menu_proj.c: 145: delay_s(2);
 "145
-[e ( _lcd_cursor (2 , -> -> 12 `i `uc -> -> 1 `i `uc ]
-[; ;menu_proj.c: 146: lcd_display_value(Motor1.Actual);
-"146
-[e ( _lcd_display_value (1 . _Motor1 1 ]
-[; ;menu_proj.c: 148: while(1)
+[e ( _delay_s (1 -> -> 2 `i `uc ]
+[; ;menu_proj.c: 147: Window(0);
+"147
+[e ( _Window (1 -> -> 0 `i `uc ]
+[; ;menu_proj.c: 148: lcd_cursor ( 12, 0 ) ;
 "148
-[e :U 415 ]
-[; ;menu_proj.c: 149: {
+[e ( _lcd_cursor (2 , -> -> 12 `i `uc -> -> 0 `i `uc ]
+[; ;menu_proj.c: 149: lcd_display_value(Motor1.Desired);
 "149
-{
-[; ;menu_proj.c: 153: while(!(Button_Press.Full !=0 ? 1:0) && !TICK_E);
+[e ( _lcd_display_value (1 . _Motor1 0 ]
+[; ;menu_proj.c: 150: lcd_cursor ( 12, 1 ) ;
+"150
+[e ( _lcd_cursor (2 , -> -> 12 `i `uc -> -> 1 `i `uc ]
+[; ;menu_proj.c: 151: lcd_display_value(Motor1.Actual);
+"151
+[e ( _lcd_display_value (1 . _Motor1 1 ]
+[; ;menu_proj.c: 153: PIE1bits.CCP1IE = 1;
 "153
-[e $U 417  ]
-[e :U 418 ]
-[e :U 417 ]
-[e $ && ! != ? != -> . _Button_Press 0 `i -> 0 `i : -> 1 `i -> 0 `i -> 0 `i ! != -> _TICK_E `i -> -> -> 0 `i `uc `i 418  ]
-[e :U 419 ]
-[; ;menu_proj.c: 155: switch(my_mch_state)
+[e = . . _PIE1bits 0 2 -> -> 1 `i `uc ]
+[; ;menu_proj.c: 155: (INTCONbits.GIE = 1);
 "155
-[e $U 421  ]
-[; ;menu_proj.c: 156: {
-"156
-{
-[; ;menu_proj.c: 157: case RUN:
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;menu_proj.c: 157: while(1)
 "157
-[e :U 422 ]
-[; ;menu_proj.c: 158: if (Button_Press.B0){
+[e :U 417 ]
+[; ;menu_proj.c: 158: {
 "158
-[e $ ! != -> . . _Button_Press 1 0 `i -> -> -> 0 `i `uc `i 423  ]
 {
-[; ;menu_proj.c: 159: my_mch_state = Update_Desired;
-"159
-[e = _my_mch_state . `E4346 1 ]
-[; ;menu_proj.c: 160: Window(1);
+[; ;menu_proj.c: 160: while(!(Button_Press.Full !=0 ? 1:0) && !TICK_E);
 "160
-[e ( _Window (1 -> -> 1 `i `uc ]
-[; ;menu_proj.c: 161: ADCON0bits.ADON=1;
-"161
-[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
-[; ;menu_proj.c: 162: PIR1bits.ADIF=0;
+[e $U 419  ]
+[e :U 420 ]
+[e :U 419 ]
+[e $ && ! != ? != -> . _Button_Press 0 `i -> 0 `i : -> 1 `i -> 0 `i -> 0 `i ! != -> _TICK_E `i -> -> -> 0 `i `uc `i 420  ]
+[e :U 421 ]
+[; ;menu_proj.c: 162: switch(my_mch_state)
 "162
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+[e $U 423  ]
+[; ;menu_proj.c: 163: {
 "163
-}
-[e :U 423 ]
-[; ;menu_proj.c: 163: }
-[; ;menu_proj.c: 165: break;
-"165
-[e $U 420  ]
-[; ;menu_proj.c: 166: case Update_Desired:
-"166
+{
+[; ;menu_proj.c: 164: case RUN:
+"164
 [e :U 424 ]
-[; ;menu_proj.c: 167: if (Button_Press.B0){
-"167
+[; ;menu_proj.c: 165: if (Button_Press.B0){
+"165
 [e $ ! != -> . . _Button_Press 1 0 `i -> -> -> 0 `i `uc `i 425  ]
 {
-[; ;menu_proj.c: 168: my_mch_state = RUN;
+[; ;menu_proj.c: 166: my_mch_state = Update_Desired;
+"166
+[e = _my_mch_state . `E4367 1 ]
+[; ;menu_proj.c: 167: Window(1);
+"167
+[e ( _Window (1 -> -> 1 `i `uc ]
+[; ;menu_proj.c: 168: ADCON0bits.ADON=1;
 "168
-[e = _my_mch_state . `E4346 0 ]
-[; ;menu_proj.c: 169: Window(0);
+[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
+[; ;menu_proj.c: 169: PIR1bits.ADIF=0;
 "169
-[e ( _Window (1 -> -> 0 `i `uc ]
-[; ;menu_proj.c: 170: ADCON0bits.ADON=0;
-"170
-[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
 "171
 }
 [e :U 425 ]
 [; ;menu_proj.c: 171: }
-[; ;menu_proj.c: 172: break;
-"172
-[e $U 420  ]
-[; ;menu_proj.c: 173: default:
+[; ;menu_proj.c: 173: break;
 "173
-[e :U 426 ]
-[; ;menu_proj.c: 174: if (Button_Press.B0){
+[e $U 422  ]
+[; ;menu_proj.c: 174: case Update_Desired:
 "174
+[e :U 426 ]
+[; ;menu_proj.c: 175: if (Button_Press.B0){
+"175
 [e $ ! != -> . . _Button_Press 1 0 `i -> -> -> 0 `i `uc `i 427  ]
 {
-[; ;menu_proj.c: 175: my_mch_state = RUN;
-"175
-[e = _my_mch_state . `E4346 0 ]
-[; ;menu_proj.c: 176: Window(0);
+[; ;menu_proj.c: 176: my_mch_state = RUN;
 "176
-[e ( _Window (1 -> -> 0 `i `uc ]
+[e = _my_mch_state . `E4367 0 ]
+[; ;menu_proj.c: 177: Window(0);
 "177
+[e ( _Window (1 -> -> 0 `i `uc ]
+[; ;menu_proj.c: 178: ADCON0bits.ADON=0;
+"178
+[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
+"179
 }
 [e :U 427 ]
-[; ;menu_proj.c: 177: }
-[; ;menu_proj.c: 178: break;
-"178
-[e $U 420  ]
-"179
-}
 [; ;menu_proj.c: 179: }
-[e $U 420  ]
-"155
-[e :U 421 ]
-[e [\ _my_mch_state , $ . `E4346 0 422
- , $ . `E4346 1 424
- 426 ]
-"179
-[e :U 420 ]
-[; ;menu_proj.c: 181: switch(my_mch_state)
+[; ;menu_proj.c: 180: break;
+"180
+[e $U 422  ]
+[; ;menu_proj.c: 181: default:
 "181
-[e $U 429  ]
-[; ;menu_proj.c: 182: {
+[e :U 428 ]
+[; ;menu_proj.c: 182: if (Button_Press.B0){
 "182
+[e $ ! != -> . . _Button_Press 1 0 `i -> -> -> 0 `i `uc `i 429  ]
 {
-[; ;menu_proj.c: 183: case RUN:
+[; ;menu_proj.c: 183: my_mch_state = RUN;
 "183
-[e :U 430 ]
-[; ;menu_proj.c: 184: lcd_cursor ( 12, 0 ) ;
+[e = _my_mch_state . `E4367 0 ]
+[; ;menu_proj.c: 184: Window(0);
 "184
-[e ( _lcd_cursor (2 , -> -> 12 `i `uc -> -> 0 `i `uc ]
-[; ;menu_proj.c: 185: lcd_display_value(Motor1.Desired);
+[e ( _Window (1 -> -> 0 `i `uc ]
 "185
-[e ( _lcd_display_value (1 . _Motor1 0 ]
-[; ;menu_proj.c: 186: lcd_cursor ( 12, 1 ) ;
+}
+[e :U 429 ]
+[; ;menu_proj.c: 185: }
+[; ;menu_proj.c: 186: break;
 "186
-[e ( _lcd_cursor (2 , -> -> 12 `i `uc -> -> 1 `i `uc ]
-[; ;menu_proj.c: 187: lcd_display_value(Motor1.Actual);
+[e $U 422  ]
 "187
-[e ( _lcd_display_value (1 . _Motor1 1 ]
-[; ;menu_proj.c: 188: LATC = 0x01;
-"188
-[e = _LATC -> -> 1 `i `uc ]
-[; ;menu_proj.c: 190: break;
+}
+[; ;menu_proj.c: 187: }
+[e $U 422  ]
+"162
+[e :U 423 ]
+[e [\ _my_mch_state , $ . `E4367 0 424
+ , $ . `E4367 1 426
+ 428 ]
+"187
+[e :U 422 ]
+[; ;menu_proj.c: 189: switch(my_mch_state)
+"189
+[e $U 431  ]
+[; ;menu_proj.c: 190: {
 "190
-[e $U 428  ]
-[; ;menu_proj.c: 191: case Update_Desired:
+{
+[; ;menu_proj.c: 191: case RUN:
 "191
-[e :U 431 ]
+[e :U 432 ]
 [; ;menu_proj.c: 192: lcd_cursor ( 12, 0 ) ;
 "192
 [e ( _lcd_cursor (2 , -> -> 12 `i `uc -> -> 0 `i `uc ]
-[; ;menu_proj.c: 193: lcd_display_value(ADC_Result);
+[; ;menu_proj.c: 193: lcd_display_value(Motor1.Desired);
 "193
-[e ( _lcd_display_value (1 _ADC_Result ]
-[; ;menu_proj.c: 194: LATC= 0x02;
+[e ( _lcd_display_value (1 . _Motor1 0 ]
+[; ;menu_proj.c: 194: lcd_cursor ( 12, 1 ) ;
 "194
-[e = _LATC -> -> 2 `i `uc ]
-[; ;menu_proj.c: 195: PIR1bits.ADIF=0;
-"195
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-[; ;menu_proj.c: 196: if (Button_Press.B1)
-"196
-[e $ ! != -> . . _Button_Press 1 1 `i -> -> -> 0 `i `uc `i 432  ]
-[; ;menu_proj.c: 197: {
+[e ( _lcd_cursor (2 , -> -> 12 `i `uc -> -> 1 `i `uc ]
+[; ;menu_proj.c: 197: if (capture !=0)
 "197
-{
-[; ;menu_proj.c: 198: Motor1.Desired = ADC_Result;
+[e $ ! != _capture -> -> 0 `i `ui 433  ]
+[; ;menu_proj.c: 198: {
 "198
-[e = . _Motor1 0 _ADC_Result ]
-"199
-}
-[e :U 432 ]
-[; ;menu_proj.c: 199: }
-[; ;menu_proj.c: 200: ADC_Result=ADRESH;
-"200
-[e = _ADC_Result _ADRESH ]
-[; ;menu_proj.c: 201: ADC_Result=ADC_Result>>2;
-"201
-[e = _ADC_Result -> >> -> _ADC_Result `i -> 2 `i `uc ]
-[; ;menu_proj.c: 202: if (ADC_Result > 50)
-"202
-[e $ ! > -> _ADC_Result `i -> 50 `i 433  ]
-[; ;menu_proj.c: 203: {
-"203
 {
-[; ;menu_proj.c: 204: ADC_Result=50;
-"204
-[e = _ADC_Result -> -> 50 `i `uc ]
-"205
+[; ;menu_proj.c: 199: Motor1.Actual = t1clk/capture;
+"199
+[e = . _Motor1 1 -> / _t1clk -> _capture `um `uc ]
+[; ;menu_proj.c: 200: capture = 0;
+"200
+[e = _capture -> -> 0 `i `ui ]
+"202
 }
 [e :U 433 ]
-[; ;menu_proj.c: 205: }
-[; ;menu_proj.c: 207: ADCON0bits.GO_DONE=1;
-"207
-[e = . . _ADCON0bits 7 1 -> -> 1 `i `uc ]
-[; ;menu_proj.c: 213: break;
-"213
-[e $U 428  ]
-[; ;menu_proj.c: 214: default:
-"214
+[; ;menu_proj.c: 202: }
+[; ;menu_proj.c: 203: lcd_display_value(Motor1.Actual);
+"203
+[e ( _lcd_display_value (1 . _Motor1 1 ]
+[; ;menu_proj.c: 205: LATEbits.LATE0 = 1;
+"205
+[e = . . _LATEbits 0 0 -> -> 1 `i `uc ]
+[; ;menu_proj.c: 208: break;
+"208
+[e $U 430  ]
+[; ;menu_proj.c: 209: case Update_Desired:
+"209
 [e :U 434 ]
-[; ;menu_proj.c: 215: lcd_cursor ( 0, 0 ) ;
-"215
-[e ( _lcd_cursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;menu_proj.c: 216: lcd_clear();
-"216
-[e ( _lcd_clear ..  ]
-[; ;menu_proj.c: 217: lcd_print ( problem );
-"217
-[e ( _lcd_print (1 _problem ]
-[; ;menu_proj.c: 218: LATC = 0x05;
-"218
-[e = _LATC -> -> 5 `i `uc ]
-[; ;menu_proj.c: 219: break;
-"219
-[e $U 428  ]
-"220
-}
-[; ;menu_proj.c: 220: }
-[e $U 428  ]
-"181
-[e :U 429 ]
-[e [\ _my_mch_state , $ . `E4346 0 430
- , $ . `E4346 1 431
- 434 ]
-"220
-[e :U 428 ]
-[; ;menu_proj.c: 222: Button_Press.Full = 0;
-"222
-[e = . _Button_Press 0 -> -> 0 `i `uc ]
-[; ;menu_proj.c: 223: TICK_E=0;
-"223
-[e = _TICK_E -> -> 0 `i `uc ]
-"225
-}
-[e :U 414 ]
-"148
-[e $U 415  ]
-[e :U 416 ]
-[; ;menu_proj.c: 225: }
-[; ;menu_proj.c: 226: }
-"226
-[e :UE 413 ]
-}
-"229
-[v _Initial `(v ~T0 @X0 1 ef ]
+[; ;menu_proj.c: 211: LATEbits.LATE1 = 1;;
+"211
+[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+[; ;menu_proj.c: 212: PIR1bits.ADIF=0;
+"212
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+[; ;menu_proj.c: 213: if (Button_Press.B1)
+"213
+[e $ ! != -> . . _Button_Press 1 1 `i -> -> -> 0 `i `uc `i 435  ]
+[; ;menu_proj.c: 214: {
+"214
 {
-[; ;menu_proj.c: 229: void Initial(void){
+[; ;menu_proj.c: 215: Motor1.Desired = ADC_Result;
+"215
+[e = . _Motor1 0 _ADC_Result ]
+"216
+}
+[e :U 435 ]
+[; ;menu_proj.c: 216: }
+[; ;menu_proj.c: 217: ADC_Result=ADRESH;
+"217
+[e = _ADC_Result _ADRESH ]
+[; ;menu_proj.c: 218: ADC_Result=ADC_Result>>2;
+"218
+[e = _ADC_Result -> >> -> _ADC_Result `i -> 2 `i `uc ]
+[; ;menu_proj.c: 219: if (ADC_Result > 50)
+"219
+[e $ ! > -> _ADC_Result `i -> 50 `i 436  ]
+[; ;menu_proj.c: 220: ADC_Result=50;
+"220
+[e = _ADC_Result -> -> 50 `i `uc ]
+[e :U 436 ]
+[; ;menu_proj.c: 221: lcd_cursor ( 12, 0 ) ;
+"221
+[e ( _lcd_cursor (2 , -> -> 12 `i `uc -> -> 0 `i `uc ]
+[; ;menu_proj.c: 222: lcd_display_value(ADC_Result);
+"222
+[e ( _lcd_display_value (1 _ADC_Result ]
+[; ;menu_proj.c: 223: ADCON0bits.GO_DONE=1;
+"223
+[e = . . _ADCON0bits 7 1 -> -> 1 `i `uc ]
+[; ;menu_proj.c: 227: break;
+"227
+[e $U 430  ]
+[; ;menu_proj.c: 228: default:
+"228
+[e :U 437 ]
+[; ;menu_proj.c: 229: lcd_cursor ( 0, 0 ) ;
+"229
+[e ( _lcd_cursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;menu_proj.c: 230: lcd_clear();
+"230
+[e ( _lcd_clear ..  ]
+[; ;menu_proj.c: 231: lcd_print ( problem );
+"231
+[e ( _lcd_print (1 _problem ]
+[; ;menu_proj.c: 233: break;
+"233
+[e $U 430  ]
+"234
+}
+[; ;menu_proj.c: 234: }
+[e $U 430  ]
+"189
+[e :U 431 ]
+[e [\ _my_mch_state , $ . `E4367 0 432
+ , $ . `E4367 1 434
+ 437 ]
+"234
+[e :U 430 ]
+[; ;menu_proj.c: 236: Button_Press.Full = 0;
+"236
+[e = . _Button_Press 0 -> -> 0 `i `uc ]
+[; ;menu_proj.c: 237: TICK_E=0;
+"237
+[e = _TICK_E -> -> 0 `i `uc ]
+"238
+}
+[e :U 416 ]
+"157
+[e $U 417  ]
+[e :U 418 ]
+[; ;menu_proj.c: 238: }
+[; ;menu_proj.c: 239: }
+"239
+[e :UE 415 ]
+}
+"242
+[v _Initial `(v ~T0 @X0 1 ef ]
+"243
+{
+[; ;menu_proj.c: 242: void Initial(void)
+[; ;menu_proj.c: 243: {
 [e :U _Initial ]
 [f ]
-[; ;menu_proj.c: 232: TRISB = 0xFF;
-"232
-[e = _TRISB -> -> 255 `i `uc ]
-[; ;menu_proj.c: 233: TRISC = 0x00;
-"233
-[e = _TRISC -> -> 0 `i `uc ]
-[; ;menu_proj.c: 235: LATC = 0xff;
-"235
-[e = _LATC -> -> 255 `i `uc ]
-[; ;menu_proj.c: 236: delay_s(3);
-"236
-[e ( _delay_s (1 -> -> 3 `i `uc ]
-[; ;menu_proj.c: 237: LATC = 0x00;
-"237
-[e = _LATC -> -> 0 `i `uc ]
-[; ;menu_proj.c: 240: OpenTimer0( 0b11111111 & 0b10111111 & 0b11011111 & 0b11110000);
-"240
-[e ( _OpenTimer0 (1 -> & & & -> 255 `i -> 191 `i -> 223 `i -> 240 `i `uc ]
-[; ;menu_proj.c: 241: WriteTimer0(40960);
-"241
-[e ( _WriteTimer0 (1 -> -> 40960 `l `ui ]
-[; ;menu_proj.c: 243: ADCON0 =0x00;
-"243
-[e = _ADCON0 -> -> 0 `i `uc ]
-[; ;menu_proj.c: 244: ADCON1 = 0x0E;
-"244
-[e = _ADCON1 -> -> 14 `i `uc ]
-[; ;menu_proj.c: 245: ADCON2 = 0x13;
+[; ;menu_proj.c: 245: TRISB = 0xFF;
 "245
-[e = _ADCON2 -> -> 19 `i `uc ]
-[; ;menu_proj.c: 246: PIR1bits.ADIF=0;
+[e = _TRISB -> -> 255 `i `uc ]
+[; ;menu_proj.c: 246: TRISE = 0x00;
 "246
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-[; ;menu_proj.c: 247: ADCON0bits.ADON=0;
+[e = _TRISE -> -> 0 `i `uc ]
+[; ;menu_proj.c: 247: TRISCbits.RC1 = 0;
 "247
-[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
-[; ;menu_proj.c: 248: TRISA = 0x01;
-"248
-[e = _TRISA -> -> 1 `i `uc ]
-[; ;menu_proj.c: 250: (INTCONbits.GIE = 1);
+[e = . . _TRISCbits 1 1 -> -> 0 `i `uc ]
+[; ;menu_proj.c: 250: OpenTimer0( 0b11111111 & 0b10111111 & 0b11011111 & 0b11111111);
 "250
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;menu_proj.c: 251: }
+[e ( _OpenTimer0 (1 -> & & & -> 255 `i -> 191 `i -> 223 `i -> 255 `i `uc ]
+[; ;menu_proj.c: 251: WriteTimer0(45536);
 "251
-[e :UE 435 ]
-}
+[e ( _WriteTimer0 (1 -> -> 45536 `l `ui ]
+[; ;menu_proj.c: 253: ADCON0 =0x00;
 "253
-[v _Window `(v ~T0 @X0 1 ef1`uc ]
+[e = _ADCON0 -> -> 0 `i `uc ]
+[; ;menu_proj.c: 254: ADCON1 = 0x0E;
 "254
-{
-[; ;menu_proj.c: 253: void Window(unsigned char num)
-[; ;menu_proj.c: 254: {
-[e :U _Window ]
-"253
-[v _num `uc ~T0 @X0 1 r1 ]
-"254
-[f ]
-[; ;menu_proj.c: 255: lcd_clear();
+[e = _ADCON1 -> -> 14 `i `uc ]
+[; ;menu_proj.c: 255: ADCON2 = 0x13;
 "255
-[e ( _lcd_clear ..  ]
-[; ;menu_proj.c: 256: lcd_cursor ( 0, 0 ) ;
+[e = _ADCON2 -> -> 19 `i `uc ]
+[; ;menu_proj.c: 256: PIR1bits.ADIF=0;
 "256
-[e ( _lcd_cursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;menu_proj.c: 257: lcd_print ( msg_ary[num*2]);
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+[; ;menu_proj.c: 257: ADCON0bits.ADON=0;
 "257
-[e ( _lcd_print (1 &U *U + &U _msg_ary * -> -> * -> _num `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _msg_ary `ui -> -> 16 `i `ui `ux ]
-[; ;menu_proj.c: 258: lcd_cursor ( 0, 1 ) ;
+[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
+[; ;menu_proj.c: 258: TRISA = 0x01;
 "258
-[e ( _lcd_cursor (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;menu_proj.c: 259: lcd_print ( msg_ary[(num*2)+1]);
-"259
-[e ( _lcd_print (1 &U *U + &U _msg_ary * -> -> + * -> _num `i -> 2 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _msg_ary `ui -> -> 16 `i `ui `ux ]
-[; ;menu_proj.c: 260: }
-"260
-[e :UE 436 ]
-}
+[e = _TRISA -> -> 1 `i `uc ]
+[; ;menu_proj.c: 261: T1CONbits.TMR1ON =1;
+"261
+[e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
+[; ;menu_proj.c: 262: T1CONbits.RD16 = 1;
+"262
+[e = . . _T1CONbits 1 6 -> -> 1 `i `uc ]
+[; ;menu_proj.c: 263: T1CONbits.TMR1CS = 0;
 "263
-[v _delay_s `(v ~T0 @X0 1 ef1`uc ]
+[e = . . _T1CONbits 1 1 -> -> 0 `i `uc ]
+[; ;menu_proj.c: 264: T1CONbits.T1CKPS0 = 1;
 "264
-{
-[; ;menu_proj.c: 263: void delay_s(unsigned char secs)
-[; ;menu_proj.c: 264: {
-[e :U _delay_s ]
-"263
-[v _secs `uc ~T0 @X0 1 r1 ]
-"264
-[f ]
+[e = . . _T1CONbits 2 3 -> -> 1 `i `uc ]
+[; ;menu_proj.c: 265: T1CONbits.T1CKPS1 = 1;
 "265
+[e = . . _T1CONbits 2 4 -> -> 1 `i `uc ]
+[; ;menu_proj.c: 267: CCP1CONbits.CCP1M0 = 1;
+"267
+[e = . . _CCP1CONbits 1 0 -> -> 1 `i `uc ]
+[; ;menu_proj.c: 268: CCP1CONbits.CCP1M1 = 0;
+"268
+[e = . . _CCP1CONbits 1 1 -> -> 0 `i `uc ]
+[; ;menu_proj.c: 269: CCP1CONbits.CCP1M2 = 1;
+"269
+[e = . . _CCP1CONbits 1 2 -> -> 1 `i `uc ]
+[; ;menu_proj.c: 270: CCP1CONbits.CCP1M3 = 0;
+"270
+[e = . . _CCP1CONbits 1 3 -> -> 0 `i `uc ]
+[; ;menu_proj.c: 273: T2CONbits.TMR2ON =1;
+"273
+[e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
+[; ;menu_proj.c: 274: CCP2CONbits.CCP2M3 = 1;
+"274
+[e = . . _CCP2CONbits 1 3 -> -> 1 `i `uc ]
+[; ;menu_proj.c: 275: CCP2CONbits.CCP2M2 = 1;
+"275
+[e = . . _CCP2CONbits 1 2 -> -> 1 `i `uc ]
+[; ;menu_proj.c: 276: PR2 = 100;
+"276
+[e = _PR2 -> -> 100 `i `uc ]
+[; ;menu_proj.c: 279: RCONbits.IPEN = 0;
+"279
+[e = . . _RCONbits 5 7 -> -> 0 `i `uc ]
+[; ;menu_proj.c: 280: INTCONbits.GIE = 1;
+"280
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;menu_proj.c: 283: INTCONbits.PEIE = 1;
+"283
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+[; ;menu_proj.c: 291: control1.kp = 0.4;
+"291
+[e = . _control1 0 -> .0.4 `f ]
+[; ;menu_proj.c: 292: control1.ki = 0.3;
+"292
+[e = . _control1 1 -> .0.3 `f ]
+[; ;menu_proj.c: 293: control1.kpki = 0.7;
+"293
+[e = . _control1 2 -> .0.7 `f ]
+[; ;menu_proj.c: 294: control1.ek = 0;
+"294
+[e = . _control1 3 -> -> 0 `i `c ]
+[; ;menu_proj.c: 295: control1.ek1 = 0;
+"295
+[e = . _control1 4 -> -> 0 `i `c ]
+[; ;menu_proj.c: 296: control1.uk = 30;
+"296
+[e = . _control1 5 -> -> 30 `i `uc ]
+[; ;menu_proj.c: 297: control1.uk1 = 30;
+"297
+[e = . _control1 6 -> -> 30 `i `uc ]
+[; ;menu_proj.c: 298: Motor1.Desired=20;
+"298
+[e = . _Motor1 0 -> -> 20 `i `uc ]
+[; ;menu_proj.c: 299: Motor1.Actual=0;
+"299
+[e = . _Motor1 1 -> -> 0 `i `uc ]
+[; ;menu_proj.c: 301: }
+"301
+[e :UE 438 ]
+}
+"304
+[v _timer `(v ~T0 @X0 1 ef ]
+"305
+{
+[; ;menu_proj.c: 304: void timer (void)
+[; ;menu_proj.c: 305: {
+[e :U _timer ]
+[f ]
+[; ;menu_proj.c: 307: OSCCONbits.IRCF0 = 1;
+"307
+[e = . . _OSCCONbits 1 4 -> -> 1 `i `uc ]
+[; ;menu_proj.c: 308: OSCCONbits.IRCF1 = 1;
+"308
+[e = . . _OSCCONbits 1 5 -> -> 1 `i `uc ]
+[; ;menu_proj.c: 309: OSCCONbits.IRCF2 = 1;
+"309
+[e = . . _OSCCONbits 1 6 -> -> 1 `i `uc ]
+[; ;menu_proj.c: 310: OSCCONbits.SCS1 = 1;
+"310
+[e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
+[; ;menu_proj.c: 311: }
+"311
+[e :UE 439 ]
+}
+"312
+[v _Window `(v ~T0 @X0 1 ef1`uc ]
+"313
+{
+[; ;menu_proj.c: 312: void Window(unsigned char num)
+[; ;menu_proj.c: 313: {
+[e :U _Window ]
+"312
+[v _num `uc ~T0 @X0 1 r1 ]
+"313
+[f ]
+[; ;menu_proj.c: 314: lcd_clear();
+"314
+[e ( _lcd_clear ..  ]
+[; ;menu_proj.c: 315: lcd_cursor ( 0, 0 ) ;
+"315
+[e ( _lcd_cursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;menu_proj.c: 316: lcd_print ( msg_ary[num*2]);
+"316
+[e ( _lcd_print (1 &U *U + &U _msg_ary * -> -> * -> _num `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _msg_ary `ui -> -> 16 `i `ui `ux ]
+[; ;menu_proj.c: 317: lcd_cursor ( 0, 1 ) ;
+"317
+[e ( _lcd_cursor (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;menu_proj.c: 318: lcd_print ( msg_ary[(num*2)+1]);
+"318
+[e ( _lcd_print (1 &U *U + &U _msg_ary * -> -> + * -> _num `i -> 2 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _msg_ary `ui -> -> 16 `i `ui `ux ]
+[; ;menu_proj.c: 319: }
+"319
+[e :UE 440 ]
+}
+"322
+[v _delay_s `(v ~T0 @X0 1 ef1`uc ]
+"323
+{
+[; ;menu_proj.c: 322: void delay_s(unsigned char secs)
+[; ;menu_proj.c: 323: {
+[e :U _delay_s ]
+"322
+[v _secs `uc ~T0 @X0 1 r1 ]
+"323
+[f ]
+"324
 [v _i `uc ~T0 @X0 1 a ]
 [v _j `uc ~T0 @X0 1 a ]
-[; ;menu_proj.c: 265: unsigned char i,j;
-[; ;menu_proj.c: 266: for(j=0;j<secs;j++)
-"266
+[; ;menu_proj.c: 324: unsigned char i,j;
+[; ;menu_proj.c: 325: for(j=0;j<secs;j++)
+"325
 {
 [e = _j -> -> 0 `i `uc ]
-[e $U 441  ]
-"267
-[e :U 438 ]
-[; ;menu_proj.c: 267: {
+[e $U 445  ]
+"326
+[e :U 442 ]
+[; ;menu_proj.c: 326: {
 {
-[; ;menu_proj.c: 268: for (i=0;i<25;i++)
-"268
+[; ;menu_proj.c: 327: for (i=0;i<25;i++)
+"327
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 25 `i 442  ]
-[e $U 443  ]
-"269
-[e :U 442 ]
-[; ;menu_proj.c: 269: _delay((unsigned long)((40)*(19660800/4000.0)));
-[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 19660800 `l `d .4000.0 `ul ]
-"268
+[e $ < -> _i `i -> 25 `i 446  ]
+[e $U 447  ]
+"328
+[e :U 446 ]
+[; ;menu_proj.c: 328: _delay((unsigned long)((40)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"327
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 25 `i 442  ]
-[e :U 443 ]
-"269
+[e $ < -> _i `i -> 25 `i 446  ]
+[e :U 447 ]
+"328
 }
-"271
+"330
 }
-"266
+"325
 [e ++ _j -> -> 1 `i `uc ]
-[e :U 441 ]
-[e $ < -> _j `i -> _secs `i 438  ]
-[e :U 439 ]
-"271
+[e :U 445 ]
+[e $ < -> _j `i -> _secs `i 442  ]
+[e :U 443 ]
+"330
 }
-[; ;menu_proj.c: 271: }
-[; ;menu_proj.c: 272: }
-"272
-[e :UE 437 ]
+[; ;menu_proj.c: 330: }
+[; ;menu_proj.c: 331: }
+"331
+[e :UE 441 ]
+}
+"332
+[v _controller_funct `(v ~T0 @X0 1 ef ]
+"333
+{
+[; ;menu_proj.c: 332: void controller_funct (void)
+[; ;menu_proj.c: 333: {
+[e :U _controller_funct ]
+[f ]
+"334
+[v _temp `f ~T0 @X0 1 a ]
+[; ;menu_proj.c: 334: float temp = 0;
+[e = _temp -> -> 0 `i `f ]
+[; ;menu_proj.c: 335: control1.ek1 = control1.ek;
+"335
+[e = . _control1 4 . _control1 3 ]
+[; ;menu_proj.c: 336: control1.ek = Motor1.Desired - Motor1.Actual;
+"336
+[e = . _control1 3 -> - -> . _Motor1 0 `i -> . _Motor1 1 `i `c ]
+[; ;menu_proj.c: 337: control1.uk1 = control1.uk;
+"337
+[e = . _control1 6 . _control1 5 ]
+[; ;menu_proj.c: 338: temp = ((control1.kpki * control1.ek )- (control1.kp * control1.ek1));
+"338
+[e = _temp - * . _control1 2 -> . _control1 3 `f * . _control1 0 -> . _control1 4 `f ]
+[; ;menu_proj.c: 339: control1.uk = control1.uk1 + temp;
+"339
+[e = . _control1 5 -> + -> . _control1 6 `f _temp `uc ]
+[; ;menu_proj.c: 340: }
+"340
+[e :UE 449 ]
 }
 [a 2C 82 101 97 100 121 32 116 111 32 103 111 0 ]
 [a 1C 80 114 111 98 108 101 109 0 ]
